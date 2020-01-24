@@ -1,8 +1,15 @@
-const date = new Date();
-let time = [date.getHours(), date.getMinutes(), date.getSeconds()];
+/**
+ * @returns {string} time - current time in format like 08:12:35
+ **/
 
-time = time.map((el)=> {
-    return el > 9 ? el : `0${el}`;
-}).join(':');
+const getTime = ()=> {
+    const date = new Date();
 
-console.log(time);
+    const time = [date.getHours(), date.getMinutes(), date.getSeconds()];
+
+    return time.map((el)=> {
+        return el > 9 ? el : `0${el}`;
+    }).join(':');
+}
+
+console.log(getTime());
